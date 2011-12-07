@@ -9,7 +9,7 @@ lib-cov
 *.pid
 *.swp
 *.swo
-tmp/
-node_modules/
+tmp
+node_modules
 .cake_task_cache
 .monitor

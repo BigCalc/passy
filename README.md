@@ -1,6 +1,28 @@
 <ProjectName> Source
 ============
 
+This is a stub package. Clone & edit it to create your own npm libraries.
+
+Install
+-------
+```
+npm install xxxx
+```
+
+Usage
+-----
+
+```coffee-script
+
+insert code here
+```
+
+Features
+--------
+
+* Add features
+
+
 Developer instructions
 ----------------------
 
@@ -13,7 +35,6 @@ Developer instructions
 ** coffee-script
 ** nodemon
 ** vows
-** sideline
 
 CakeFile
 --------
@@ -39,8 +60,3 @@ Follow github best practices
 * Merge onto master, and push (should be fast-forward)
 * Once ready for release, tag master.
 * Make branch bugfixes on a version branch off master
-
-Features
---------
-
-* Add features

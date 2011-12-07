@@ -1,6 +1,6 @@
 {
   "name": "",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "keywords": [],
   "homepage": "",
@@ -19,7 +19,7 @@
     "vows-bdd": "0.x.x"
   },
   "engines": {
-    "node": "0.4.x",
+    "node": "0.6.x",
     "npm": "1.x.x"
   },
   "licenses": [{
@@ -33,6 +33,6 @@
   "bugs": { "url": "http://github.com/<username>/<project>/issues" },
   "scripts": {
     "start": "cake start",
-    "test": "vows app/test/* --spec"
+    "test": "cake test"
   }
 }

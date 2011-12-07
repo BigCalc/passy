@@ -1,3 +1,3 @@
 require("coffee-script");
-// Start Coffe-script server
+// Start App
 require("./start")();
