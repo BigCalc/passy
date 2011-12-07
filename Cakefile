@@ -34,24 +34,8 @@ getFiles = (dir, pattern = /.*/) ->
 
 # Tasks
 
-task 'start', 'Start the development environment', ->
-  execute 'NODE_ENV=development nodemon start.coffee'
-
-task 'start:debug', 'Start the development environment, with debugging enabled', ->
-  execute 'NODE_ENV=development nodemon --nodejs --debug start.coffee'
-
-task 'start:test', 'Start the test environment', ->
-  execute 'NODE_ENV=test node index.js'
-
-task 'start:prod', 'Start the production environment', ->
-  execute 'NODE_ENV=production node index.js'
-
 task 'test:spec', 'Run BDD specifications', ->
   files = getFiles 'test/spec', /.*\.coffee/i
-  execute "NODE_ENV=test vows #{VOWS_OPTS} #{files}"
-
-task 'test:integration', 'Run integration tests', ->
-  files = getFiles 'test/integration', /.*\.coffee/i
   execute "NODE_ENV=test vows #{VOWS_OPTS} #{files}"
 
 task 'test:benchmark', 'Run benchmark tests', ->
@@ -60,8 +44,7 @@ task 'test:benchmark', 'Run benchmark tests', ->
 
 task 'test', 'Run all tests', ->
   invoke 'test:spec'
-  invoke 'test:integration'
-  invoke 'test:benchmark'
+  # invoke 'test:benchmark'
 
 task 'docs', 'Generate annotated source code with Docco', ->
   fs.readdir 'lib', (err, contents) ->

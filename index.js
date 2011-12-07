@@ -1,3 +1,3 @@
 require("coffee-script");
 // Start App
-require("./start")();
+module.exports = require("./lib/password");

@@ -1,22 +1,17 @@
 {
-  "name": "",
+  "name": "passy",
   "version": "0.0.1",
-  "description": "",
-  "keywords": [],
-  "homepage": "",
-  "contributors": [],
-  "private": true,
+  "description": "Password utils",
+  "keywords": ["password"],
+  "homepage": "http://github.com/quillu/passy",
+  "contributors": ["Dharmesh Malam <d@quillu.com> (http://dharmeshmalam.com)"],
   "main": "index.js",
   "dependencies": {
-    "coffee-script": "1.x.x"
+    "coffee-script": "1.x.x",
+    "bcrypt": "x.x.x"
   },
   "devDependencies": {
-    "vows": "0.x.x",
-    "zombie": "0.x.x",
-    "should": "0.x.x",
-    "benchmark": "0.x.x",
-    "sinon": "1.x.x",
-    "vows-bdd": "0.x.x"
+    "testthings": "0.x.x"
   },
   "engines": {
     "node": "0.6.x",
@@ -24,15 +19,14 @@
   },
   "licenses": [{
     "type": "",
-    "url": "http://github.com/<username>/<project>/raw/master/LICENSE"
+    "url": "http://github.com/quillu/passy/raw/master/LICENSE"
   }],
   "repository": {
       "type": "git",
-      "url": "git://github.com/<username>/<project>.git"
+      "url": "git://github.com/quillu/passy.git"
   },
-  "bugs": { "url": "http://github.com/<username>/<project>/issues" },
+  "bugs": { "url": "http://github.com/quillu/passy/issues" },
   "scripts": {
-    "start": "cake start",
     "test": "cake test"
   }
 }
