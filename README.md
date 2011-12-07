@@ -1,12 +1,13 @@
-<ProjectName> Source
+Passy Source
 ============
 
-This is a stub package. Clone & edit it to create your own npm libraries.
+This is a utility module for common password related code.
+Ensures best practices.
 
 Install
 -------
 ```
-npm install xxxx
+npm install passy
 ```
 
 Usage
@@ -14,13 +15,29 @@ Usage
 
 ```coffee-script
 
-insert code here
+passy = require 'passy'
+
+passy.generate 'abcd123', (err, hash) ->
+  throw err if err?
+  db.store hash
+
+passy.verify password, hash, (err, same) ->
+	throw err if err?
+	if same
+		console.log 'login sucessfull'
+	else
+		console.log 'wrong password'
+
+passy.generateSalt 10, (err, salt) ->
+	throw err if err?
+	console.log salt
+
 ```
 
 Features
 --------
 
-* Add features
+* Currently wraps bcrypt
 
 
 Developer instructions
