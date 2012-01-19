@@ -1,3 +1,4 @@
 require("coffee-script");
-// Start App
+// Export Library
 module.exports = require("./lib/password");
+module.exports.identity = require("./lib/identity");

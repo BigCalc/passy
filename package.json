@@ -1,21 +1,21 @@
 {
   "name": "passy",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Password utils",
   "keywords": ["password"],
   "homepage": "http://github.com/quillu/passy",
   "contributors": ["Dharmesh Malam <d@quillu.com> (http://dharmeshmalam.com)"],
   "main": "index.js",
   "dependencies": {
-    "coffee-script": "1.x.x",
-    "bcrypt": "x.x.x"
+    "coffee-script": "x.x.x",
+    "bcrypt": "0.3.2"
   },
   "devDependencies": {
-    "testthings": "0.x.x"
+    "testthings": "x.x.x"
   },
   "engines": {
     "node": ">=0.4.0",
-    "npm": "1.x.x"
+    "npm": "x.x.x"
   },
   "licenses": [{
     "type": "",
