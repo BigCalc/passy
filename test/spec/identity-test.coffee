@@ -4,7 +4,7 @@ passy = require '../../index'
 
 vows.describe('identity').addBatch(
   'when passy is required':
-    topic: -> passy.identity 
+    topic: -> passy.identity
     'it should be function returning default id': (iden) ->
       should.isFunction iden
     'it should have a corpus': (iden) ->
@@ -13,32 +13,25 @@ vows.describe('identity').addBatch(
     'it should have a default': (iden) ->
       should.isNumber iden.DEFAULT
       iden.DEFAULT.should.be.above(1)
-    'default function should equal calling generate with default': (iden) ->
+    'default function should equal calling itselft with default': (iden) ->
       result1 = iden()
-      result2 = iden.generate iden.DEFAULT
+      result2 = iden iden.DEFAULT
       result1.should.have.lengthOf result2.length
-    'it should be able to generate ids': 
-      topic: (iden) -> iden.generate
-      "generate should be a function ": (g) ->
-        should.isFunction g
-      "given no args it should error": (g) ->
-        (->
-          g()
-        ).should.throw()
+    'it should be able to generate ids':
+      topic: (iden) -> iden
       "given length of 0 it should error": (g) ->
         (->
           g(0)
         ).should.throw()
-      "given a non number it should error": (g) ->
+      "given a character it should error": (g) ->
         (->
           g('a')
         ).should.throw()
-        (->
-          g(null)
-        ).should.throw()
+      "given a [] it should error": (g) ->
         (->
           g([])
         ).should.throw()
+      "given a {} it should error": (g) ->
         (->
           g({})
         ).should.throw()
@@ -57,11 +50,11 @@ vows.describe('identity').addBatch(
         charset = passy.identity.CORPUS
         charset.map (c) ->
           result[c] = 0
-              
+
         while --n >= 0
           id = g(1)
           result[id]++
-        
+
         should.exist result
         lower = (m/charset.length) * 0.90
         upper = (m/charset.length) * 1.10
@@ -134,6 +127,6 @@ vows.describe('identity').addBatch(
         ]
         trues.map (input) ->
           v(input).should.be.true
-      
+
 
 ).export module
