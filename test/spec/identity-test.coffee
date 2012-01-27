@@ -2,23 +2,44 @@
 
 passy = require '../../index'
 
-vows.describe('identity').addBatch(
+vows.describe('identify').addBatch(
   'when passy is required':
-    topic: -> passy.identity
+    topic: -> passy
     'it should be function returning default id': (iden) ->
       should.isFunction iden
-    'it should have a corpus': (iden) ->
-      should.isArray iden.CORPUS
-      iden.CORPUS.length.should.be.above(1)
+    'it should have a ALPHABET': (iden) ->
+      should.isArray iden.ALPHABET
+      iden.ALPHABET.length.should.be.above(1)
     'it should have a default': (iden) ->
       should.isNumber iden.DEFAULT
       iden.DEFAULT.should.be.above(1)
-    'default function should equal calling itselft with default': (iden) ->
-      result1 = iden()
-      result2 = iden iden.DEFAULT
+    'it should have a epoc': (iden) ->
+      iden.EPOC.should.be.an.instanceof Date
+      iden.EPOC.getTime().should.be.above(1)
+    'when it creates a timebased 64bit ids':
+      'it should be a 16 char hex string': (iden) ->
+        result = iden()
+        result.should.match /[0-9a-f]{16}/
+        result.should.have.lengthOf 16
+      'the first 10 chars (5bytes) should be a date since Epoc': (iden) ->
+        result = iden()
+        timeNow = Date.now()
+        timeStamp = result.slice 0, 10
+        timeStampMillis = parseInt timeStamp, 16
+        timeSinceUnix = timeStampMillis + iden.EPOC.getTime()
+        timeNow.should.not.be.below timeSinceUnix
+        date = new Date timeSinceUnix
+        date.valueOf().should.isNumber
+      'the last 6 chars (3bytes) should be a random': (iden) ->
+        results = (parseInt(iden().slice(10, 16),16) for num in [0..1000])
+        results = results.sort()
+        results[i].should.not.equal results[i+1] for i in [0..results.length-2]
+    'random function should equal calling itselft with default': (iden) ->
+      result1 = iden.random()
+      result2 = iden.random iden.DEFAULT
       result1.should.have.lengthOf result2.length
-    'it should be able to generate ids':
-      topic: (iden) -> iden
+    'it should be able to random generate ids':
+      topic: (iden) -> iden.random
       "given length of 0 it should error": (g) ->
         (->
           g(0)

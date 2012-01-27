@@ -1,9 +1,20 @@
 crypto = require 'crypto'
 DEFAULT = 12
-CORPUS = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-'.split('')
+ALPHABET = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-'.split('')
 REGX = /^[A-Za-z0-9-_]+$/m
+EPOC = new Date '01-JAN-2012'
 
-identity = (length = DEFAULT) ->
+identity = ->
+  since = new Date() - EPOC
+  sinceHex = since.toString 16
+
+  while sinceHex.length < 10
+    sinceHex = '0' + sinceHex
+
+  buf = crypto.randomBytes 3
+  sinceHex+buf.toString 'hex'
+
+random =  (length = DEFAULT) ->
   throw new Error "Length should be +ve Number" unless typeof length is 'number' and length > 0
 
   buf = crypto.randomBytes length
@@ -21,7 +32,9 @@ verify = (id) ->
 
 # Public
 module.exports = identity
+module.exports.random = random
 module.exports.parse = parse
 module.exports.verify = verify
-module.exports.CORPUS = CORPUS
+module.exports.ALPHABET = ALPHABET
+module.exports.EPOC = EPOC
 module.exports.DEFAULT = DEFAULT
