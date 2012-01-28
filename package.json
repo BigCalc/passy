@@ -1,10 +1,14 @@
 {
   "name": "passy",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Password utils",
-  "keywords": ["password"],
+  "keywords": [
+    "password"
+  ],
   "homepage": "http://github.com/quillu/passy",
-  "contributors": ["Dharmesh Malam <d@quillu.com> (http://dharmeshmalam.com)"],
+  "contributors": [
+    "Dharmesh Malam <d@quillu.com> (http://dharmeshmalam.com)"
+  ],
   "main": "index.js",
   "dependencies": {
     "coffee-script": "x.x.x",
@@ -17,16 +21,21 @@
     "node": ">=0.4.0",
     "npm": "x.x.x"
   },
-  "licenses": [{
-    "type": "",
-    "url": "http://github.com/quillu/passy/raw/master/LICENSE"
-  }],
+  "licenses": [
+    {
+      "type": "",
+      "url": "http://github.com/quillu/passy/raw/master/LICENSE"
+    }
+  ],
   "repository": {
-      "type": "git",
-      "url": "git://github.com/quillu/passy.git"
+    "type": "git",
+    "url": "git://github.com/quillu/passy.git"
   },
-  "bugs": { "url": "http://github.com/quillu/passy/issues" },
+  "bugs": {
+    "url": "http://github.com/quillu/passy/issues"
+  },
   "scripts": {
     "test": "cake test"
-  }
+  },
+  "optionalDependencies": {}
 }
