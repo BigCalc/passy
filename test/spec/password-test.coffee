@@ -9,7 +9,7 @@ vows.describe('password').addBatch(
       should.isFunction c.generateSalt
       c.generateSalt 10, (err, salt) ->
         should.not.exist(err)
-        should.extst(salt)
+        should.exist(salt)
 
     'it should generate a hashed password': (c) ->
       should.isFunction c.generate
