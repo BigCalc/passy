@@ -1,4 +1,4 @@
-# Passy <sup>[![Version Badge](http://vb.teelaun.ch/BigCalc/passy.svg#0.5.0)](https://npmjs.org/package/passy)</sup> #
+# Passy #
 
 [![Build Status](https://travis-ci.org/BigCalc/passy.png?branch=master)](https://travis-ci.org/BigCalc/passy)
 
