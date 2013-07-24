@@ -1,41 +1,37 @@
 {
   "name": "passy",
-  "version": "0.4.1",
-  "description": "Password utils",
+  "version": "0.5.0",
+  "description": "Password/id utils",
   "keywords": [
-    "password"
+    "password",
+    "id"
   ],
-  "homepage": "http://github.com/quillu/passy",
-  "contributors": [
-    "Dharmesh Malam <d@quillu.com> (http://dharmeshmalam.com)"
-  ],
+  "homepage": "http://github.com/bigcalc/passy",
   "main": "index.js",
   "dependencies": {
-    "coffee-script": "x.x.x",
-    "bcrypt": "0.3.2"
   },
   "devDependencies": {
-    "testthings": "x.x.x"
+    "mocha": "x.x.x",
+    "chai": "~1.7.2"
   },
   "engines": {
-    "node": ">=0.4.0",
+    "node": "0.x.x",
     "npm": "x.x.x"
   },
   "licenses": [
     {
-      "type": "",
-      "url": "http://github.com/quillu/passy/raw/master/LICENSE"
+      "type": "BSD 3-Clause",
+      "url": "http://github.com/bigcalc/passy/raw/master/LICENSE"
     }
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/quillu/passy.git"
+    "url": "git://github.com/bigcalc/passy.git"
   },
   "bugs": {
-    "url": "http://github.com/quillu/passy/issues"
+    "url": "http://github.com/bigcalc/passy/issues"
   },
   "scripts": {
-    "test": "cake test"
-  },
-  "optionalDependencies": {}
+    "test": "mocha"
+  }
 }

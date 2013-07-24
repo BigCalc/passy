@@ -1,79 +1,57 @@
-Passy Source
-============
+# Passy <sup>[![Version Badge](http://vb.teelaun.ch/BigCalc/passy.svg#0.5.0)](https://npmjs.org/package/passy)</sup> #
 
-This is a utility module for common password related code.
-Ensures best practices.
+[![Build Status](https://travis-ci.org/BigCalc/passy.png?branch=master)](https://travis-ci.org/BigCalc/passy)
 
-Install
--------
+[![NPM](https://nodei.co/npm/passy.png?downloads=true)](https://nodei.co/npm/passy/)
+
+Passy is a CommonJS module for Node.js that has identiy and random id generations functions. It allows easy generations, verification and parsing of hex encoded 64bit time based ids, or variable length URL encoded random ids. Time based ids store the creation date within, so don't require additional storage for a 'created' field which is useful for in-memoery DBs like REDIS. URL encoded random ids only use the characters (0-9a-zA-Z-_) which can be safely used in URLs, and provide 64 bits of entropy per character.
+
+## Install ##
+
 ```
-npm install passy
+npm install --save passy
 ```
 
-Usage
------
+## Usage ##
 
-```coffee-script
+### Identity ###
 
-passy = require 'passy'
+```js
 
-passy.generate 'abcd123', (err, hash) ->
-  throw err if err?
-  db.store hash
+var identity = require('passy');
 
-passy.verify password, hash, (err, same) ->
-	throw err if err?
-	if same
-		console.log 'login sucessfull'
-	else
-		console.log 'wrong password'
+var id = identity();
+console.log(id); // 0b79934122140ad5
 
-passy.generateSalt 10, (err, salt) ->
-	throw err if err?
-	console.log salt
+identity.verify(id); // true
+identity.verify(121) // false
+
+var date = identity.parseDate(id)
+console.log(date); // Wed Jul 24 2013 11:05:33 GMT+0100 (BST)
 
 ```
 
-Features
---------
+### Random ###
 
-* Currently wraps bcrypt
+```js
+var random = require('passy').random;
 
+var url = random();
+console.log(url); // 5I13rNbNgttU
 
-Developer instructions
-----------------------
+random.verify(url); // true
+random.verify('3%') // false
 
-* Ensure git, node and npm are installed
-* git clone git@github.com:<username>/<project>.git
-* switch to dev branch, and make it track origin/dev
-* run npm install
-* run npm link ( this installs dev dependencies and symlinks the project to your global npm registry)
-* Install the following globally via npm install -g
-** coffee-script
-** nodemon
-** vows
+var raw =  random.parse(url);
+console.log(raw); // [ 5, 44, 1, 3, 27, 49, 11, 49, 16, 29, 29, 56 ]
 
-CakeFile
---------
-A Cakefile is used to manage the app
-type cake at the root directory to see a list of commands
+```
+ 
+## Developer ###
+Create Github issues for all bugs, features & requests. Pull requests are welcome.
 
-Developer flow
---------------
-Follow github best practices
+## Test ###
+Test with `npm test`
 
-* Update to latest from master (should be fast forward)
-* Create a new feature branch off master
-* Push branch to origin
-* Write a test
-* Make test pass
-* Refactor
-* Commit
-* Push to remote branch
-* Repeat till feature is finished
-* Then update master to latest from origin (should be fast forward)
-* Rebase your branch to be ontop of master
-* Squash your commits into a atomic feature commit (should have a big log message auto created from the little commits)
-* Merge onto master, and push (should be fast-forward)
-* Once ready for release, tag master.
-* Make branch bugfixes on a version branch off master
+## License ##
+[BSD 3-Clause](LICENSE)
