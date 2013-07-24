@@ -1,6 +1,6 @@
 {
   "name": "passy",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Password/id utils",
   "keywords": [
     "password",
@@ -32,6 +32,6 @@
     "url": "http://github.com/bigcalc/passy/issues"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "./node_modules/mocha/bin/mocha"
   }
 }
