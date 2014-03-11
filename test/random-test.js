@@ -32,7 +32,6 @@ describe('random', function () {
   });
 
   it('should create a random ID', function () {
-    var result = random();
     assert.isString(random());
   });
 
@@ -62,7 +61,7 @@ describe('random', function () {
 
     for (k in result) {
       if (result.hasOwnProperty(k)) {
-        assert.closeTo(result[k], (m / charset.length), (m / charset.length) / 10);
+        assert.closeTo(result[k], (m / charset.length), (m / charset.length) / 5);
       }
     }
 
