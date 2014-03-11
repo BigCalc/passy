@@ -9,8 +9,7 @@ var gulp     = require('gulp'),
     sloc     = require('gulp-sloc'),
     mocha    = require('gulp-mocha');
 
-var CODE_FILES = ['GulpFile.js', 'lib/**/*.js'],
-    TEST_FILES = ['test/**/*.js'],
+var TEST_FILES = ['test/**/*.js'],
     ALL_FILES  = ['GulpFile.js', 'lib/**/*.js', 'test/**/*.js'];
 
 gulp.task('install', shell.task([
