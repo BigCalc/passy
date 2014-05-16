@@ -9,7 +9,7 @@
   "homepage": "http://github.com/bigcalc/passy",
   "main": "index.js",
   "dependencies": {
-    "microtime": "~0.5.1"
+    "microtime": "^0.6.0"
   },
   "devDependencies": {
     "gulp": "^3.5.5",
