@@ -1,6 +1,6 @@
 # Passy #
 
-[![Build Status](https://travis-ci.org/BigCalc/passy.png?branch=master)](https://travis-ci.org/BigCalc/passy)
+[![Build Status](https://travis-ci.org/OctaveWealth/passy.png?branch=master)](https://travis-ci.org/OctaveWealth/passy)
 
 [![NPM](https://nodei.co/npm/passy.png?downloads=true)](https://nodei.co/npm/passy/)
 
@@ -52,10 +52,10 @@ console.log(raw); // [ 5, 44, 1, 3, 27, 49, 11, 49, 16, 29, 29, 56 ]
 
 See code and tests for detailed info.
  
-## Developer ###
-Create Github issues for all bugs, features & requests. Pull requests are welcome.
+## [Contributing](CONTRIBUTING) ##
+Create Github issues for all bugs, features & requests. Pull requests are welcome. Make sure tests are included.
 
-## Test ###
+## Test ##
 Test with `npm test`
 
 ## License ##
