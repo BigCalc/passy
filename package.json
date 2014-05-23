@@ -36,5 +36,10 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
-  }
+  },
+  "files": [
+    "lib",
+    "index.js",
+    "LICENSE"
+  ]
 }
