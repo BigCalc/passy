@@ -21,12 +21,7 @@
     "node": "^0.12.5",
     "npm": "*"
   },
-  "licenses": [
-    {
-      "type": "BSD 3-Clause",
-      "url": "http://github.com/OctaveWealth/passy/raw/master/LICENSE"
-    }
-  ],
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git://github.com/OctaveWealth/passy.git"
