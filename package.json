@@ -9,17 +9,17 @@
   "homepage": "http://github.com/OctaveWealth/passy",
   "main": "index.js",
   "optionalDependencies": {
-    "microtime": "^1.0.1"
+    "microtime": "^1.4.2"
   },
   "devDependencies": {
-    "jshint": "^2.5.0",
+    "jshint": "^2.8.0",
     "jsonlint": "^1.6.0",
-    "mocha": "^1.18.2",
-    "chai": "^1.9.1"
+    "mocha": "^2.2.5",
+    "chai": "^3.0.0"
   },
   "engines": {
-    "node": "^0.10.30",
-    "npm": "^1.4.23"
+    "node": "^0.12.5",
+    "npm": "*"
   },
   "licenses": [
     {
